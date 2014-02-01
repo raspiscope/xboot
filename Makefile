@@ -108,7 +108,7 @@
 ## MCU = atmega1284p
 ## MCU = atmega2560
 ## MCU = atmega2561
-MCU = atxmega64a3
+MCU = atxmega192a3u
 
 # Is this a bootloader?
 #MAKE_BOOTLOADER=no
@@ -311,8 +311,8 @@ ifeq ($(OVERRIDE_AVRDUDE_PROGRAMMER),)
 # Type: avrdude -c ?
 # to get a full listing.
 #
-AVRDUDE_PROGRAMMER = jtag2pdi
-#AVRDUDE_PROGRAMMER = jtag2isp
+#AVRDUDE_PROGRAMMER = jtag2pdi
+AVRDUDE_PROGRAMMER = jtag2isp
 #AVRDUDE_PROGRAMMER = avrispmkii
 #AVRDUDE_PROGRAMMER = avr109
 

@@ -332,6 +332,15 @@ int main(void)
                         #ifdef USE_LED
 #ifdef __AVR_XMEGA__
                         LED_PORT.OUTTGL = (1 << LED_PIN);
+                        // RASPISCOPE - send PP from UART so we know this is working
+                        USARTE0.DATA = "P";
+                        if(!(USARTE0.STATUS & 0x20))
+                            while(!(USARTE0.STATUS & 0x40)); // wait for TX complete
+                        USARTE0.STATUS |= 0x40;  // clear TX interrupt
+                        USARTE0.DATA = "P";
+                        if(!(USARTE0.STATUS & 0x20))
+                            while(!(USARTE0.STATUS & 0x40)); // wait for TX complete
+                        USARTE0.STATUS |= 0x40;  // clear TX interrupt
 #else // __AVR_XMEGA__
                         LED_PORT ^= (1 << LED_PIN);
 #endif // __AVR_XMEGA__

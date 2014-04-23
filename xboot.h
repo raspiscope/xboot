@@ -131,11 +131,11 @@
 #define ENTER_PIN_PUEN          1
 
 // ENTER_DELAY
-#define ENTER_BLINK_COUNT       3
+#define ENTER_BLINK_COUNT       5
 #define ENTER_BLINK_WAIT        30000
 
 // ENTER_UART
-//#define ENTER_UART_NEED_SYNC
+#define ENTER_UART_NEED_SYNC    1
 
 // ENTER_FIFO
 //#define ENTER_FIFO_NEED_SYNC
@@ -155,8 +155,8 @@
 //#define WATCHDOG_TIMEOUT        WDT_PER_8KCLK_gc
 
 // LED
-#define LED_PORT_NAME           A
-#define LED_PIN                 0
+#define LED_PORT_NAME           C
+#define LED_PIN                 5
 #define LED_INV                 1
 
 // UART
@@ -166,10 +166,10 @@
 // UART_U2X will double clock rate for ATMEGA
 // Needed for high baud rates
 #define UART_BAUD_RATE          115200
-#define UART_PORT_NAME          C
+#define UART_PORT_NAME          E
 #define UART_NUMBER             0
 #define UART_U2X
-#define UART_RX_PUEN
+#define UART_RX_PUEN            1
 
 // UART RS485 Enable Output
 #define UART_EN_PORT_NAME       C
